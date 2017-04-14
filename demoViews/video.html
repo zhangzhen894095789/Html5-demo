@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>html5-video</title>
+    <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+    <script>window.jQuery || document.write('<script src="../js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+    <script src="../js/plugins.js"></script>
+    <script src="../js/main.js"></script>
+    <script type="text/javascript">
+        window.onload=function (){
+            console.log("dom 方式的页面初始化。。。");
+        };
+        $(function () {
+            console.log("jquery.js 的页面初始化。。")
+        });
+    </script>
+</head>
+
+<body>
+<link rel="import" href="../index.html">
+<!--cnotrols 属性的有无决定你的视频播放后是否可以控制暂停，播放，快进等功能-->
+<video id="video1" hidden="hidden" src="环保小视频.mp4" width="100%" height="100%" loop="loop"  preload="auto" controls="controls">
+    Your browser does not support the video tag.
+</video>
+
+<div style="text-align: center;">
+    <button onclick="playPause()">播放/暂停</button>
+    <button onclick="makeBig()">放大</button>
+    <button onclick="makeSmall()">缩小</button>
+    <button onclick="makeNormal()">默认</button>
+</div>
+<video id="video2" width="420" style="margin-top:15px;" controls="controls">
+    <source src="环保小视频.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+</video>
+<script type="text/javascript">
+    var myVideo2 = document.getElementById("video2");
+    function playPause() {
+        if (myVideo2.paused){
+            myVideo2.play();
+        }
+        else
+            myVideo2.pause();
+    }
+    function makeBig() {
+        myVideo2.width+=320;
+    }
+    function makeSmall() {
+        myVideo2.width-=320;
+    }
+    function makeNormal() {
+        myVideo2.width=320;
+    }
+</script>
+
+</body>
+</html>
