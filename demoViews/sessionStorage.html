@@ -14,6 +14,9 @@
     {
         sessionStorage.pagecount=1;
     }
+    if (sessionStorage.pagecount==1){
+        window.location.href="../index.html";
+    }
     document.write("Visits " + sessionStorage.pagecount + " time(s) this session.");
 </script>
 <p>刷新页面会看到计数器在增长。</p>
